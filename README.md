@@ -22,7 +22,7 @@ Seamlessly integrate Getty Images' expansive digital content, powerful search te
 - (void) execute{
     NSString* APIKEY=[[[NSProcessInfo processInfo]environment]objectForKey:@"ConnectSDK_ApiKey"];
     NSString* APISECRET=[[[NSProcessInfo processInfo]environment]objectForKey:@"ConnectSDK_ApiSecret"];
-    sdk *connectSDK = [[sdk alloc] initWithApiKey:APIKEY andApiSecret:APISECRET];
+    ConnectSdk *connectSDK = [[ConnectSdk alloc] initWithApiKey:APIKEY andApiSecret:APISECRET];
 
     // connectSDK.Search().Images().withPhrase("dog")
     NSDictionary *imagesResponse = [[[[connectSDK Search] Images] withPhrase:@"dog"] Execute];
