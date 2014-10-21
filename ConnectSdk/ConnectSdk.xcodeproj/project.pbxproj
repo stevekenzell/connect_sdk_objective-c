@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA9217A019F603BB00C56FDB /* FluentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AA92179F19F603BB00C56FDB /* FluentRequest.m */; };
 		AAEF76F819DC6B7200DD3E84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEF76F719DC6B7200DD3E84 /* Foundation.framework */; };
 		AAEF76FD19DC6B7200DD3E84 /* ConnectSdk.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAEF76FC19DC6B7200DD3E84 /* ConnectSdk.h */; };
 		AAEF76FF19DC6B7200DD3E84 /* ConnectSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEF76FE19DC6B7200DD3E84 /* ConnectSdk.m */; };
@@ -49,6 +50,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA92179E19F603BB00C56FDB /* FluentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FluentRequest.h; sourceTree = "<group>"; };
+		AA92179F19F603BB00C56FDB /* FluentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FluentRequest.m; sourceTree = "<group>"; };
 		AAEF76F419DC6B7200DD3E84 /* libConnectSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libConnectSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEF76F719DC6B7200DD3E84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AAEF76FB19DC6B7200DD3E84 /* ConnectSdk-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConnectSdk-Prefix.pch"; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				AAEF76FC19DC6B7200DD3E84 /* ConnectSdk.h */,
 				AAEF76FE19DC6B7200DD3E84 /* ConnectSdk.m */,
 				AAEF76FA19DC6B7200DD3E84 /* Supporting Files */,
+				AA92179E19F603BB00C56FDB /* FluentRequest.h */,
+				AA92179F19F603BB00C56FDB /* FluentRequest.m */,
 			);
 			path = ConnectSdk;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				AAEF772419DC6DCF00DD3E84 /* Download.m in Sources */,
 				AAEF771F19DC6DAD00DD3E84 /* Credentials.m in Sources */,
 				AAEF772819DC6DF500DD3E84 /* ImageSearch.m in Sources */,
+				AA9217A019F603BB00C56FDB /* FluentRequest.m in Sources */,
 				AAEF772519DC6DCF00DD3E84 /* ImageDetail.m in Sources */,
 				AAEF76FF19DC6B7200DD3E84 /* ConnectSdk.m in Sources */,
 			);

@@ -15,7 +15,7 @@
 @synthesize apiKey = _apiKey;
 @synthesize accessToken = _accessToken;
 
--(NSDictionary*)GetAccessToken
+-(NSDictionary*)GetAccessToken:(NSError * __autoreleasing *) error
 {
     if (token == nil)
     {

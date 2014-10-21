@@ -64,7 +64,8 @@
 }
 -(NSDictionary*)GetAccessToken
 {
-    return [authorize GetAccessToken];
+    NSError* error = nil;
+    return [authorize GetAccessToken:&error];
 }
 
 -(void) setApiKey: (NSString*) apiKey

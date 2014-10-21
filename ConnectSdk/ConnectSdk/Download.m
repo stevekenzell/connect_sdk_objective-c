@@ -45,9 +45,10 @@
 }
 -(NSDictionary*) Execute
 {
+    NSError* error = nil;
     NSString* rawURL = [self BuildUrl];
     NSURL *url = [NSURL URLWithString:rawURL];
-    [credentials GetAccessToken];
+    [credentials GetAccessToken:&error];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setValue:credentials.apiKey forHTTPHeaderField:@"Api-Key"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];

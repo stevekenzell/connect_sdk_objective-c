@@ -11,7 +11,7 @@
 -(void) setApiSecret: (NSString*) apiSecret;
 -(void) setUsername: (NSString*) userName;
 -(void) setPassword: (NSString*) passWord;
--(NSDictionary *) GetAccessToken;
+-(NSDictionary *) GetAccessToken: (NSError**) error;
 
 @property NSString* apiKey;
 @property NSString* accessToken;
