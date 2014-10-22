@@ -54,7 +54,7 @@
     return self;
 }
 
--(NSDictionary*) execute {
+-(NSDictionary*) Execute {
     
     NSString* requestString = [self buildRequestString];
     
@@ -118,8 +118,15 @@
     
     [requestString appendString:[self hostAndBaseRoute]];
     [requestString appendString:[self route]];
-    [requestString appendString:@"/?"];
-    
+    //
+    // add id
+    NSString* image = [requestParameters valueForKeyPath:@"id"];
+    if (image != nil)
+    {
+        [requestString appendString:[NSString stringWithFormat:@"/%@", image]];
+        [requestParameters removeObjectForKey:@"id"];
+    }
+
     for (NSString* key in requestParameters) {
         id value = [requestParameters objectForKey:key];
         if([value isKindOfClass:[NSArray class]] || [value isKindOfClass:[NSMutableArray class]])
@@ -130,8 +137,11 @@
         
         [queryParameters addObject:[NSString stringWithFormat:@"%@=%@",key,value]];
     }
-    
-    [requestString appendString:[queryParameters componentsJoinedByString:@"&"]];
+    if (queryParameters.count > 0)
+    {
+        [requestString appendString:@"/?"];
+        [requestString appendString:[queryParameters componentsJoinedByString:@"&"]];
+    }
     return requestString;
 }
 @end

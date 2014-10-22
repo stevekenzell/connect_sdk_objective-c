@@ -2,9 +2,6 @@
 //  FluentRequest.h
 //  ConnectSdk
 //
-//  Created by Steve on 10/20/14.
-//  Copyright (c) 2014 Steve. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 #import "Credentials.h"
@@ -35,7 +32,7 @@
 
 -(void) setHttpMethod:(NSString*)value;
 
--(NSDictionary*) execute;
+-(NSDictionary*) Execute;
 
 
 @end

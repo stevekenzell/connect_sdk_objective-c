@@ -8,17 +8,17 @@
 
 @implementation Download
 {
-    NSMutableDictionary* QueryParameters;
     Credentials* credentials;
 }
 
--(id) initWithCredentials:(Credentials *) authorize {
-    if (self = [super init]){
-        [self setCredentials:authorize];
-    }
-    QueryParameters = [[NSMutableDictionary alloc] init];
+-(id)init:(NSString*)destination initWithCredentials:(Credentials*)authorize {
+    self = [super init:destination withCredentials:authorize];
+    [self setRoute:@"/downloads"];
+    requestParameters = [[NSMutableDictionary alloc] init];
+    httpMethod = @"POST";
     return self;
 }
+
 -(void) setCredentials:(Credentials *)authorization
 {
     credentials = authorization;
@@ -26,9 +26,11 @@
 
 -(Download*) withId:(NSString *)id
 {
-    [QueryParameters setObject:id forKey:@"id"];
+    [requestParameters setObject:id forKey:@"id"];
+    [requestParameters setObject:@"false" forKey:@"auto_download"];
     return self;
 }
+/*
 -(NSString*) BuildUrl
 {
     NSMutableString * url = [[NSMutableString alloc]init];
@@ -87,5 +89,5 @@
     NSDictionary *responseObject = [NSDictionary dictionaryWithDictionary:responseDictionary];
     
     return responseObject;
-}
+}*/
 @end

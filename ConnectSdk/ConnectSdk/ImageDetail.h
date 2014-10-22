@@ -4,12 +4,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Credentials.h"
+#import "FluentRequest.h"
 
-@interface ImageDetail : NSObject
--(id) initWithCredentials: (Credentials*) authorize;
+@interface ImageDetail : FluentRequest
+-(id)init:(NSString*)destination initWithCredentials:(Credentials*)authorize;
 -(ImageDetail *) withId: (NSString*) id;
 -(ImageDetail *) withResponseField: (NSString*) field;
--(NSString *) BuildUrl;
--(NSDictionary *) Execute;
 @end

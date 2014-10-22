@@ -22,7 +22,6 @@
         [self setApiKey:apiKey];
         [self setApiSecret:apiSecret];
     }
-    //token = [[NSMutableDictionary alloc] init];
     authorize = [[Credentials alloc] init];
     [authorize setApiKey:apiKey];
     [authorize setApiSecret:apiSecret];
@@ -35,7 +34,6 @@
         [self setUsername:userName];
         [self setPassword:userPassword];
     }
-    //token = [[NSMutableDictionary alloc] init];
     authorize = [[Credentials alloc] init];
     [authorize setApiKey:apiKey];
     [authorize setApiSecret:apiSecret];
@@ -45,7 +43,6 @@
 }
 
 -(ConnectSdk*)Search{
-    //[self GetAccessToken];
     return self;
 }
 -(ImageSearch*) Images{
@@ -53,13 +50,11 @@
     return imagesearch;
 }
 -(ImageDetail*) Image{
-    //[self GetAccessToken];
-    ImageDetail *imagedetail = [[ImageDetail alloc] initWithCredentials:authorize];
+    ImageDetail *imagedetail = [[ImageDetail alloc] init:@"https://connect.gettyimages.com/v3" initWithCredentials:authorize];
     return imagedetail;
 }
 -(Download*) Download{
-    //[self GetAccessToken];
-    Download *download = [[Download alloc] initWithCredentials:authorize];
+    Download *download = [[Download alloc] init:@"https://connect.gettyimages.com/v3" initWithCredentials:authorize];
     return download;
 }
 -(NSDictionary*)GetAccessToken
