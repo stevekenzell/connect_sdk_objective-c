@@ -71,8 +71,11 @@
     NSData* responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&responseError];
     
     if(responseError) {
-        NSLog(@"Error with response");
-        return nil;
+        NSLog(@"RESPONSE ERROR:\n%@",responseError.description);
+        // setup dictionary and add error
+        NSError *jsonError;
+        NSDictionary *myDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&jsonError];
+        return myDictionary;
     }
     
     NSError* jsonParserError;
