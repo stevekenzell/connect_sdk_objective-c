@@ -6,6 +6,11 @@ Seamlessly integrate Getty Images' expansive digital content, powerful search te
 - Get image metadata.
 - Download files using your Getty Images products (e.g., Editorial subscriptions, Easy Access, Thinkstock Subscriptions, and Image Packs).
 
+## What's provided?
+This solution contains two projects
+* ConnectSdk - the SDK library
+* ConnectSdkTests - tests for the SDK library
+
 ## Assumptions
 * You have the latest XCode ide.
 * You have "Getty Test" credentials from http://api.gettyimages.com
