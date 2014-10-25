@@ -137,12 +137,13 @@
             value = [value componentsJoinedByString:@","];
             
         }
-        
-        [queryParameters addObject:[NSString stringWithFormat:@"%@=%@",key,value]];
+        NSString *escapedValue = [value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+
+        [queryParameters addObject:[NSString stringWithFormat:@"%@=%@", key, escapedValue]];
     }
     if (queryParameters.count > 0)
     {
-        [requestString appendString:@"/?"];
+        [requestString appendString:@"?"];
         [requestString appendString:[queryParameters componentsJoinedByString:@"&"]];
     }
     return requestString;

@@ -54,8 +54,7 @@
     // connectSDK.Search().Images().Creative().withPhrase("dog")
 
     NSDictionary *images = [[[[[connectSDK Search] Images] Creative] withPhrase:@"dog"] Execute];
-    XCTAssertNotNil(images, @"images is null");
-    NSLog(@"images :\n%@", images);
+    [self checkResponse: images];
 }
 -(void)testFindEditorialImages
 {
@@ -367,6 +366,5 @@
     NSLog(@"images :\n%@", imagesResponse);
     NSDictionary* images = [imagesResponse valueForKeyPath:@"images"];
     XCTAssertNotNil(images, @"images is null");
-   
 }
 @end

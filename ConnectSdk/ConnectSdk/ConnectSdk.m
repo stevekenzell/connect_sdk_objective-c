@@ -46,7 +46,7 @@
     return self;
 }
 -(ImageSearch*) Images{
-    ImageSearch *imagesearch = [[ImageSearch alloc] initWithCredentials:authorize];
+    ImageSearch *imagesearch = [[ImageSearch alloc] init:@"https://connect.gettyimages.com/v3" initWithCredentials:authorize];
     return imagesearch;
 }
 -(ImageDetail*) Image{

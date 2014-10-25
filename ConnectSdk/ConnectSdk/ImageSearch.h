@@ -4,11 +4,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Credentials.h"
+#import "FluentRequest.h"
 
-@interface ImageSearch : NSObject
+@interface ImageSearch : FluentRequest
+-(id)init:(NSString*)destination initWithCredentials:(Credentials*)authorize;
 
--(id) initWithCredentials: (Credentials*) authorize;
 -(ImageSearch *) withPhrase: (NSString*) phrase;
 -(ImageSearch *) withResponseField: (NSString*) field;
 -(ImageSearch *) withEditorialSegment: (NSString*) segment;
@@ -21,6 +21,4 @@
 -(ImageSearch *) withPageSize: (int) pageSize;
 -(ImageSearch *) Creative;
 -(ImageSearch *) Editorial;
--(NSString *) BuildUrl;
--(NSDictionary *) Execute;
 @end
